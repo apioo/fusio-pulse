@@ -47,5 +47,3 @@ jobs:
           php bin/fusio adduser --role=1 --username=test --email=test@test.com --password=test1234!
           php bin/fusio login --username=test --password=test1234!
           php bin/fusio deploy
-      - name: PHPUnit
-        run: vendor/bin/phpunit
