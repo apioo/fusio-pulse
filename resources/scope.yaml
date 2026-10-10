@@ -1,0 +1,8 @@
+chat:
+  description: "Send chat messages"
+email:
+  description: "Send email messages"
+push:
+  description: "Send push messages"
+sms:
+  description: "Send SMS messages"

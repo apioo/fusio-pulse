@@ -1,0 +1,4 @@
+"chat": !include resources/operations/chat.yaml
+"email": !include resources/operations/email.yaml
+"push": !include resources/operations/push.yaml
+"sms": !include resources/operations/sms.yaml

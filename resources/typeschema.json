@@ -1,0 +1,113 @@
+{
+  "definitions": {
+    "Message": {
+      "type": "struct",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "Chat_Message": {
+      "type": "struct",
+      "properties": {
+        "subject": {
+          "type": "string"
+        },
+        "options": {
+          "type": "map",
+          "schema": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Email_Message": {
+      "type": "struct",
+      "properties": {
+        "from": {
+          "type": "string"
+        },
+        "to": {
+          "type": "array",
+          "schema": {
+            "type": "string"
+          }
+        },
+        "replyTo": {
+          "type": "array",
+          "schema": {
+            "type": "string"
+          }
+        },
+        "cc": {
+          "type": "array",
+          "schema": {
+            "type": "string"
+          }
+        },
+        "bcc": {
+          "type": "array",
+          "schema": {
+            "type": "string"
+          }
+        },
+        "priority": {
+          "type": "integer"
+        },
+        "subject": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "html": {
+          "type": "string"
+        }
+      }
+    },
+    "Push_Message": {
+      "type": "struct",
+      "properties": {
+        "subject": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "options": {
+          "type": "map",
+          "schema": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Sms_Message": {
+      "type": "struct",
+      "properties": {
+        "phone": {
+          "type": "string"
+        },
+        "subject": {
+          "type": "string"
+        },
+        "from": {
+          "type": "string"
+        },
+        "options": {
+          "type": "map",
+          "schema": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

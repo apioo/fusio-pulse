@@ -1,0 +1,11 @@
+scopes: ["chat"]
+stability: 1
+description: "Submits a chat message"
+httpMethod: POST
+httpPath: "/chat"
+httpCode: 200
+outgoing: "App\\Model\\ChatMessage"
+throws:
+  400: "App\\Model\\Message"
+  500: "App\\Model\\Message"
+action: "App\\Action\\Chat"

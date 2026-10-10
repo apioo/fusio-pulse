@@ -1,0 +1,19 @@
+Consumer:
+  scopes:
+    - chat
+    - email
+    - push
+    - sms
+    - system
+    - authorization
+    - consumer
+Administrator:
+  scopes:
+    - chat
+    - email
+    - push
+    - sms
+    - system
+    - authorization
+    - consumer
+    - backend

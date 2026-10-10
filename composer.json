@@ -1,0 +1,44 @@
+{
+  "config": {
+    "platform": {
+      "php": "8.4"
+    },
+    "allow-plugins": {
+      "php-http/discovery": false
+    }
+  },
+  "require": {
+    "php": ">=8.4",
+    "fusio/impl": "^8.0",
+    "fusio/adapter-stripe": "^6.0",
+    "symfony/http-client": "^8.0",
+    "symfony/notifier": "^8.0",
+    "symfony/twilio-notifier": "^8.0",
+    "symfony/vonage-notifier": "^8.0",
+    "symfony/sinch-notifier": "^8.0",
+    "symfony/infobip-notifier": "^8.0",
+    "symfony/telnyx-notifier": "^8.0",
+    "symfony/slack-notifier": "^8.0",
+    "symfony/discord-notifier": "^8.0",
+    "symfony/microsoft-teams-notifier": "^8.0",
+    "symfony/telegram-notifier": "^8.0",
+    "symfony/fake-chat-notifier": "^8.0",
+    "symfony/google-chat-notifier": "^8.0",
+    "symfony/expo-notifier": "^8.0",
+    "symfony/one-signal-notifier": "^8.0",
+    "symfony/novu-notifier": "^8.0",
+    "symfony/sendgrid-mailer": "^8.0",
+    "symfony/mailgun-mailer": "^8.0",
+    "symfony/amazon-mailer": "^8.0",
+    "symfony/postmark-mailer": "^8.0",
+    "symfony/resend-mailer": "^8.0"
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^2.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
+  }
+}

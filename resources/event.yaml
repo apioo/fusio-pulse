@@ -1,0 +1,8 @@
+chat.sent:
+  description: "A chat message was sent"
+email.sent:
+  description: "An email message was sent"
+push.sent:
+  description: "A push message was sent"
+sms.sent:
+  description: "A sms message was sent"

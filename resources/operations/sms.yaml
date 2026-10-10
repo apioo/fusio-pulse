@@ -1,0 +1,11 @@
+scopes: ["sms"]
+stability: 1
+description: "Submits a sms message"
+httpMethod: POST
+httpPath: "/sms"
+httpCode: 200
+outgoing: "App\\Model\\SmsMessage"
+throws:
+  400: "App\\Model\\Message"
+  500: "App\\Model\\Message"
+action: "App\\Action\\Sms"

@@ -1,0 +1,51 @@
+name: CI
+on:
+  - pull_request
+  - push
+jobs:
+  phpstan:
+    name: PHPStan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.4
+          coverage: none
+      - name: Composer install
+        run: composer install --no-interaction --no-ansi --no-progress
+      - name: Run PHPStan
+        run: vendor/bin/phpstan analyse
+  phpunit:
+    name: "PHPUnit (PHP: ${{ matrix.php-versions }})"
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-versions:
+         - 8.4
+         - 8.5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-versions }}
+          coverage: none
+      - name: Setup MySQL
+        run: |
+          sudo /etc/init.d/mysql start
+          mysql -e "CREATE DATABASE fusio_plant;" -uroot -proot
+          mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'test1234';" -uroot -proot
+      - name: Composer install
+        run: composer install --no-interaction --no-ansi --no-progress
+      - name: Setup Fusio
+        run: |
+          php bin/fusio migrate --no-interaction
+          php bin/fusio adduser --role=1 --username=test --email=test@test.com --password=test1234!
+          php bin/fusio login --username=test --password=test1234!
+          php bin/fusio deploy
+      - name: PHPUnit
+        run: vendor/bin/phpunit
