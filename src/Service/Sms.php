@@ -44,7 +44,7 @@ readonly class Sms
             $options = $this->optionsFactory->factory($sms->getOptions(), $transport);
 
             $texter = new Texter($transport, $this->messageBus, $this->eventDispatcher);
-            $texter->send(new SmsMessage($phone, $subject, $sms->getFrom(), $options));
+            $texter->send(new SmsMessage($phone, $subject, $sms->getFrom() ?? '', $options));
 
             $this->dispatchEvent('sms.sent', $sms);
 

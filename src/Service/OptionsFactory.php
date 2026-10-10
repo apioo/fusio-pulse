@@ -27,7 +27,7 @@ use Symfony\Component\Notifier\Transport;
 
 readonly class OptionsFactory
 {
-    public function factory(RecordInterface $options, Transport\TransportInterface $transport): ?MessageOptionsInterface
+    public function factory(?RecordInterface $options, Transport\TransportInterface $transport): ?MessageOptionsInterface
     {
         if ($transport instanceof TwilioTransport) {
             return new TwilioOptions($options->getAll());

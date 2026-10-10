@@ -4,7 +4,8 @@ description: "Submits a push message"
 httpMethod: POST
 httpPath: "/push"
 httpCode: 200
-outgoing: "App\\Model\\PushMessage"
+incoming: "App\\Model\\PushMessage"
+outgoing: "App\\Model\\Message"
 throws:
   400: "App\\Model\\Message"
   500: "App\\Model\\Message"
